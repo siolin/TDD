@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'app',
-  template: ``
+  templateUrl: './app.component.html',
 })
-export class AppComponent {}
+export class AppComponent {
+  public title = 'Test Tour of Heroes';
+}
