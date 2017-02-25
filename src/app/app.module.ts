@@ -1,3 +1,5 @@
+import { components } from './components/index';
+import { services } from './services/index';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -36,6 +38,7 @@ const APP_PROVIDERS = [
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
+    ...components
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -45,7 +48,8 @@ const APP_PROVIDERS = [
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    ...services
   ]
 })
 export class AppModule {}
