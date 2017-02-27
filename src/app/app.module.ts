@@ -1,4 +1,4 @@
-import { PageComponent } from './components/page/page.component';
+import { PageItemComponent } from './components/page-item/page-item.component';
 import { components } from './components/index';
 import { services } from './services/index';
 import { BrowserModule } from '@angular/platform-browser';
@@ -41,7 +41,7 @@ const APP_PROVIDERS = [
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    PageComponent,
+    PageItemComponent,
     ...components,
   ],
   imports: [ // import Angular's modules

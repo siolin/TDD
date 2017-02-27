@@ -1,9 +1,10 @@
-import { LoginFormComponent } from './login-form/login-form.component';
-import { NavigationItemComponent } from './navigation/navigation-item/navigation-item.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { VerticalLayoutComponent } from './vertical-layout/vertical-layout.component';
-import { HorizontalLayoutComponent } from './horizontal-layout/horizontal-layout.component';
 import { ArticleComponent } from './article/article.component';
+import { HorizontalLayoutComponent } from './horizontal-layout/horizontal-layout.component';
+import { VerticalLayoutComponent } from './vertical-layout/vertical-layout.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { NavigationItemComponent } from './navigation/navigation-item/navigation-item.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { PageComponent } from './page/page.component';
 
 export const components = [
   ArticleComponent,
@@ -11,5 +12,6 @@ export const components = [
   VerticalLayoutComponent,
   NavigationComponent,
   NavigationItemComponent,
-  LoginFormComponent
+  LoginFormComponent,
+  PageComponent
 ];
