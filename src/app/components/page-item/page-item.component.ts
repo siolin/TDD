@@ -37,18 +37,17 @@ export class PageItemComponent implements OnInit {
   }
 
   public createComponent(data, container, componentAlias, currentComponent) {
-    const content = 'contents';
-    const children = 'children';
+    const params = ['contents', 'children'];
     const inputProviders = [];
-    if (data.hasOwnProperty(content) || data.hasOwnProperty(children)) {
+    params.forEach((param) => {
+      if (data.hasOwnProperty(param)) {
       Object.keys(data).forEach((inputName) => {
-        if (inputName === content) {
-          inputProviders.push({ provide: inputName, useValue: data.contents });
-        } else if (inputName === children) {
-          inputProviders.push({ provide: inputName, useValue: data.children });
+        if (inputName === param) {
+          inputProviders.push({ provide: inputName, useValue: data[param] });
         }
       });
-    }
+      }
+    });
     let resolvedInputs = ReflectiveInjector.resolve(inputProviders);
     let injector = ReflectiveInjector
       .fromResolvedProviders(resolvedInputs, container.parentInjector);
