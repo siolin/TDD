@@ -1,3 +1,4 @@
+import { PageComponent } from './components/page/page.component';
 import { components } from './components/index';
 import { services } from './services/index';
 import { BrowserModule } from '@angular/platform-browser';
@@ -26,6 +27,8 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 
+import '../styles/styles.scss';
+
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
@@ -38,7 +41,8 @@ const APP_PROVIDERS = [
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    ...components
+    PageComponent,
+    ...components,
   ],
   imports: [ // import Angular's modules
     BrowserModule,

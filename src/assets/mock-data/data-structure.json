@@ -1,0 +1,36 @@
+{
+	"class": "Page",
+	"id": 123,
+	"url": "/path/exaple.html",
+	"title": "Example title",
+	"meta": "auto, sport, family",
+	"template": "regular_page",
+	"children": [
+		{
+			"class": "ArticleComponent",
+			"id": 124,
+		  "contents": "<h1>Top Article content</h1>"
+	  },
+	  {
+      "class": "HorizontalLayoutComponent",
+      "id": 125,
+      "children":[
+        {
+          "class": "ArticleComponent",
+          "id": 126,
+          "contents": "<h2>left article content</h2>"
+        },
+        {
+          "class": "ArticleComponent",
+          "id": 127,
+          "contents": "<h2>right article content</h2>"
+        }
+      ]
+    },
+    {
+      "class": "ArticleComponent",
+      "id": 128,
+      "contents": "<h3>bottom article content</h3>"
+    }
+  ]
+}
