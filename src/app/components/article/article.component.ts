@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector, ElementRef } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
 
 @Component({
   selector: 'article-component',
@@ -10,10 +10,8 @@ export class ArticleComponent implements OnInit {
 
   constructor(
     private injector: Injector,
-    private el: ElementRef
   ) {
     this.contents = this.injector.get('contents');
-    el.nativeElement.innerHTML = this.contents;
   }
 
   ngOnInit() { }

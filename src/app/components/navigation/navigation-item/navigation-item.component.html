@@ -1,0 +1,4 @@
+<li class="nav-item">
+  <a class="nav-link" [routerLink]="[data.url]">{{ data.title }}</a>
+  <navigation *ngIf="data.children.length > 0" [data]="data.children"></navigation>
+</li>

@@ -1,11 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'navigation-item',
   templateUrl: 'navigation-item.component.html'
 })
 export class NavigationItemComponent implements OnInit {
-  constructor() { }
 
-  ngOnInit() { }
+  @Input() public data;
+
+  constructor() {}
+
+  public ngOnInit() {
+    console.log(this.data);
+  }
 }
