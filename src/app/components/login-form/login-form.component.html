@@ -1,0 +1,22 @@
+<div class="row justify-content-center align-items-center">
+  <div class="sign-in-wrapper col-12 col-sm-10 col-md-8 col-lg-5">
+    <h5 class="sign-in-title">{{ metadata.title }}</h5>
+    <form class="sign-in-content" [formGroup]="loginForm" novalidate>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email"
+          formControlName="login"
+          placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password"
+          formControlName="password"
+          placeholder="Password">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -20,14 +20,36 @@
       "id": 125,
       "children":[
         {
-          "class": "ArticleComponent",
-          "id": 126,
-          "contents": "<h2>left article content</h2>"
+          "class": "VerticalLayoutComponent",
+          "id": 125,
+          "children": [
+            {
+              "class": "ArticleComponent",
+              "id": 126,
+              "contents": "<h2>left article content</h2>"
+            },
+            {
+              "class": "ArticleComponent",
+              "id": 127,
+              "contents": "<h2>right article content</h2>"
+            }
+          ]
         },
         {
-          "class": "ArticleComponent",
-          "id": 127,
-          "contents": "<h2>right article content</h2>"
+          "class": "VerticalLayoutComponent",
+          "id": 125,
+          "children": [
+            {
+              "class": "ArticleComponent",
+              "id": 126,
+              "contents": "<h2>left article content</h2>"
+            },
+            {
+              "class": "ArticleComponent",
+              "id": 127,
+              "contents": "<h2>right article content</h2>"
+            }
+          ]
         }
       ]
     },

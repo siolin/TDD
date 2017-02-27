@@ -10,7 +10,5 @@ export class NavigationItemComponent implements OnInit {
 
   constructor() {}
 
-  public ngOnInit() {
-    console.log(this.data);
-  }
+  public ngOnInit() {}
 }
