@@ -1,22 +1,31 @@
 <div class="row justify-content-center align-items-center">
-  <div class="sign-in-wrapper col-12 col-sm-10 col-md-8 col-lg-5">
-    <h5 class="sign-in-title">{{ metadata.title }}</h5>
-    <form class="sign-in-content" [formGroup]="loginForm" novalidate>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email"
-          formControlName="login"
-          placeholder="Enter email">
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" class="form-control" id="password"
-          formControlName="password"
-          placeholder="Password">
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block">Log In</button>
-      </div>
-    </form>
+  <div class="col-12 col-sm-10 col-md-8 col-lg-5 mt-5">
+    <div class="card">
+      <h5 class="card-header p-3 bg-primary text-white">{{ metadata.title }}</h5>
+      <form class="card-content  p-3" [formGroup]="loginForm" novalidate>
+
+        <div class="form-group" *ngFor="let item of metadata.fields" >
+          <label for="" class="text-capitalize">{{ item.label }}</label>
+          <input [type]="item.name" class="form-control" id=""
+            [formControlName]="item.name"
+            placeholder="">
+          <div *ngIf="loginForm.controls[item.name].errors && (loginForm.controls[item.name].dirty || loginForm.controls[item.name].touched)">
+            <div [hidden]="!loginForm.controls[item.name].hasError('required')" class="text-danger">
+              {{ item.name }} is required
+            </div>
+            <div [hidden]="!loginForm.controls[item.name].hasError('minlength')" class="text-danger">
+              {{ item.name }} must be at least {{ item.validators.minlength }} characters long.
+            </div>
+            <div [hidden]="!loginForm.controls[item.name].hasError('maxlength')" class="text-danger">
+              {{ item.name }} must be at least {{ item.validators.maxlength }} characters long.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.controls['password'].value || !loginForm.valid">Log In</button>
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.controls['login'].valid">Send Message</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

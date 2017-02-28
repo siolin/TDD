@@ -1,6 +1,23 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
+interface Metadata {
+  component: string;
+  title: string;
+  endpoint: string;
+  fields: [{
+    name: string;
+    label: string;
+    validators: Validation;
+  }];
+}
+
+interface Validation {
+  required?: boolean;
+  minlength?: number;
+  maxlength?: number;
+}
+
 @Component({
   selector: 'login-form',
   templateUrl: 'login-form.component.html'
@@ -12,8 +29,24 @@ export class LoginFormComponent implements OnInit {
     title: 'Login',
     endpoint: 'api/hello',
     fields: [
-      { name: 'login', label: 'Login', validators: [ 'required', 'minlength', 'maxlength' ] },
-      { name: 'password', label: 'password', validators: [ 'minlength', 'maxlength' ] }
+      {
+        name: 'login',
+        label: 'Login',
+        validators: {
+          required: true,
+          minlength: 2,
+          maxlength: 4
+        }
+      },
+      {
+        name: 'password',
+        label: 'password',
+        validators: {
+          required: false,
+          minlength: 2,
+          maxlength: 16
+        }
+      }
     ]
   };
 
@@ -22,22 +55,23 @@ export class LoginFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder
-    // @Inject(FormBuilder) fb: FormBuilder
   ) {}
 
   public ngOnInit() {
     this.metadata.fields.forEach((el) => {
       let validators = [];
-      el.validators.forEach((validator) => {
-        if (validator === 'required') {
-          validators.push(Validators.required);
-        }
-      });
-      // console.log(this.formConfig[el.name]);
-      this.formConfig[el.name] = ['', [Validators.required, Validators.minLength(2)]];
-    });
+      if (el.validators.required) {
+        validators.push(Validators.required);
+      }
+      if (el.validators.minlength) {
+        validators.push(Validators.minLength(el.validators.minlength));
+      }
+      if (el.validators.maxlength) {
+        validators.push(Validators.maxLength(el.validators.maxlength));
+      }
 
-    console.log(this);
+      this.formConfig[el.name] = ['', validators];
+    });
 
     this.loginForm = this.fb.group(this.formConfig);
 
