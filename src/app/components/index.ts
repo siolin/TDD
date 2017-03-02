@@ -1,3 +1,4 @@
+import { SignatureComponent } from './signature/signature.component';
 import { ArticleComponent } from './article/article.component';
 import { HorizontalLayoutComponent } from './horizontal-layout/horizontal-layout.component';
 import { VerticalLayoutComponent } from './vertical-layout/vertical-layout.component';
@@ -13,5 +14,6 @@ export const components = [
   NavigationComponent,
   NavigationItemComponent,
   LoginFormComponent,
+  SignatureComponent,
   PageComponent
 ];
