@@ -2,3 +2,9 @@
 /* This file is for setting global styles  */
 @import 'variables';
 @import '../../node_modules/bootstrap/scss/bootstrap';
+
+
+signature-pad canvas {
+  border-radius: 1.5rem;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+}

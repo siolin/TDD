@@ -1,3 +1,5 @@
+import { componentList } from './../index';
+import { ArticleComponent } from './../article/article.component';
 import {
   Component,
   Input,
@@ -7,11 +9,9 @@ import {
   ComponentFactoryResolver,
   OnInit
 } from '@angular/core';
-import { components } from '../index';
 
 @Component({
   selector: 'page-item',
-  entryComponents: components,
   templateUrl: 'page-item.component.html'
 })
 export class PageItemComponent implements OnInit {
@@ -24,11 +24,7 @@ export class PageItemComponent implements OnInit {
 
   constructor(
     private resolver: ComponentFactoryResolver,
-  ) {
-    components.forEach((el) => {
-      this.componentAlias[el.name] = el;
-    });
-  }
+  ) {}
 
   public destroyComponent(currentComponent) {
     if (currentComponent) {
@@ -41,17 +37,17 @@ export class PageItemComponent implements OnInit {
     const inputProviders = [];
     params.forEach((param) => {
       if (data.hasOwnProperty(param)) {
-      Object.keys(data).forEach((inputName) => {
-        if (inputName === param) {
-          inputProviders.push({ provide: inputName, useValue: data[param] });
-        }
-      });
+        Object.keys(data).forEach((inputName) => {
+          if (inputName === param) {
+            inputProviders.push({ provide: inputName, useValue: data[param] });
+          }
+        });
       }
     });
     let resolvedInputs = ReflectiveInjector.resolve(inputProviders);
     let injector = ReflectiveInjector
       .fromResolvedProviders(resolvedInputs, container.parentInjector);
-    let factory = this.resolver.resolveComponentFactory(componentAlias[data.class]);
+    let factory = this.resolver.resolveComponentFactory(componentList[data.class]);
     let component = factory.create(injector);
     currentComponent = component;
     container.insert(component.hostView);

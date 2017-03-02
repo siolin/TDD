@@ -3,7 +3,7 @@ import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 
 @Component({
   selector: 'signature',
-  templateUrl: 'signature.component.html'
+  templateUrl: './signature.component.html'
 })
 export class SignatureComponent implements  AfterViewInit {
 
@@ -11,8 +11,8 @@ export class SignatureComponent implements  AfterViewInit {
 
   private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     backgroundColor: '#eee',
-    canvasWidth: 500,
-    canvasHeight: 300,
+    canvasWidth: 350,
+    canvasHeight: 175,
     penColor: "black"
   };
 

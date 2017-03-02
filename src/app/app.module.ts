@@ -46,7 +46,7 @@ const APP_PROVIDERS = [
     ...components,
   ],
   imports: [ // import Angular's modules
-  SignaturePadModule,
+    SignaturePadModule,
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
@@ -57,6 +57,9 @@ const APP_PROVIDERS = [
     ENV_PROVIDERS,
     APP_PROVIDERS,
     ...services
+  ],
+  entryComponents: [
+    ...components
   ]
 })
 export class AppModule {}

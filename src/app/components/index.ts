@@ -17,3 +17,14 @@ export const components = [
   SignatureComponent,
   PageComponent
 ];
+
+export const componentList = {
+  'ArticleComponent': ArticleComponent,
+  'HorizontalLayoutComponent': HorizontalLayoutComponent,
+  'VerticalLayoutComponent': VerticalLayoutComponent,
+  'NavigationComponent': NavigationComponent,
+  'NavigationItemComponent': NavigationItemComponent,
+  'LoginFormComponent': LoginFormComponent,
+  'SignatureComponent': SignatureComponent,
+  'PageComponent': PageComponent,
+};
