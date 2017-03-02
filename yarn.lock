@@ -241,6 +241,12 @@ amdefine@>=0.0.4, amdefine@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angular2-signaturepad@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/angular2-signaturepad/-/angular2-signaturepad-2.2.0.tgz#f819e20a277870fe5203e7472fe56b3d9460a6ea"
+  dependencies:
+    signature_pad "^1.5.2"
+
 angular2-template-loader@^0.6.0:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/angular2-template-loader/-/angular2-template-loader-0.6.2.tgz#c0d44e90fff0fac95e8b23f043acda7fd1c51d7c"
@@ -4837,6 +4843,10 @@ sigmund@~1.0.0:
 signal-exit@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
+
+signature_pad@^1.5.2:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/signature_pad/-/signature_pad-1.5.3.tgz#8addb05b15f9f5d814e8c1e76e9800eb4191437d"
 
 slide@^1.1.5:
   version "1.1.6"
