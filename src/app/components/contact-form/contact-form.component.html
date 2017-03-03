@@ -1,0 +1,41 @@
+<h1>Angular 2 select demo app</h1>
+<form style="padding:18px;max-width:800px;"
+    [formGroup]="form">
+
+    <div style="margin:5px 0;font-weight:600;">Single select example</div>
+    <ng-select
+      [options]="options0"
+      [multiple]="multiple0"
+      placeholder="Select one"
+      formControlName="selectSingle"
+      [allowClear]="true"
+      (opened)="onSingleOpened()"
+      (closed)="onSingleClosed()"
+      (selected)="onSingleSelected($event)"
+      (deselected)="onSingleDeselected($event)">
+  </ng-select>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <ng-select
+    [options]="options1"
+    [multiple]="multiple1"
+    placeholder="Select multiple"
+        formControlName="selectMultiple"
+        (opened)="onMultipleOpened()"
+        (closed)="onMultipleClosed()"
+        (selected)="onMultipleSelected($event)"
+        (deselected)="onMultipleDeselected($event)">
+  </ng-select>
+
+  <div class="d-flex p-2">
+    <span class="badge badge-pill badge-default mr-2 p-2" *ngFor="let item of selection">{{item}}</span>
+  </div>
+
+</form>

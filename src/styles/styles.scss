@@ -2,7 +2,7 @@
 /* This file is for setting global styles  */
 @import 'variables';
 @import '../../node_modules/bootstrap/scss/bootstrap';
-
+@import 'components/select';
 
 signature-pad canvas {
   border-radius: 1.5rem;

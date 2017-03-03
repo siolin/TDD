@@ -18,6 +18,8 @@ import {
   PreloadAllModules
 } from '@angular/router';
 import { SignaturePadModule } from 'angular2-signaturepad';
+// import { SelectModule } from 'ng2-select';
+import {SelectModule} from 'angular2-select';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -46,6 +48,7 @@ const APP_PROVIDERS = [
     ...components,
   ],
   imports: [ // import Angular's modules
+    SelectModule,
     SignaturePadModule,
     BrowserModule,
     ReactiveFormsModule,
