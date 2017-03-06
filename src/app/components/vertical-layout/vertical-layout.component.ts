@@ -1,10 +1,10 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 
 @Component({
   selector: 'vartical-layout',
   templateUrl: 'vertical-layout.component.html'
 })
-export class VerticalLayoutComponent implements OnInit {
+export class VerticalLayoutComponent {
 
   public data = this.injector.get('children');
 
@@ -12,5 +12,4 @@ export class VerticalLayoutComponent implements OnInit {
     private injector: Injector
   ) { }
 
-  public ngOnInit() {}
 }

@@ -1,17 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'field-form',
   templateUrl: 'field-form.component.html'
 })
-export class FieldFormComponent implements OnInit {
+export class FieldFormComponent {
 
-  @Input() data: any;
-  @Input() group: any;
+  @Input() public data: any;
+  @Input() public group: any;
 
-  constructor() {}
-
-  ngOnInit() {
-
-  }
 }

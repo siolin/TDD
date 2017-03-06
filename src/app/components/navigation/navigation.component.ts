@@ -58,11 +58,11 @@ export class NavigationComponent implements OnInit {
         }
       ]
     }
-  ]
+  ];
 
-  constructor(
-    // private injector: Injector
-  ) {}
+  // constructor(
+  //   // private injector: Injector
+  // ) {}
 
   public ngOnInit() {
     if (this.data) {

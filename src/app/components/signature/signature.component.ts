@@ -9,11 +9,11 @@ export class SignatureComponent implements  AfterViewInit {
 
   @ViewChild(SignaturePad) public signaturePad: SignaturePad;
 
-  private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
+  public signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     backgroundColor: '#eee',
     canvasWidth: 350,
     canvasHeight: 175,
-    penColor: "black"
+    penColor: 'black'
   };
 
   public ngAfterViewInit() {

@@ -1,10 +1,10 @@
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 
 @Component({
   selector: 'article-component',
   templateUrl: 'article.component.html'
 })
-export class ArticleComponent implements OnInit {
+export class ArticleComponent {
 
   public contents: string = '';
 
@@ -13,6 +13,4 @@ export class ArticleComponent implements OnInit {
   ) {
     this.contents = this.injector.get('contents');
   }
-
-  ngOnInit() { }
 }

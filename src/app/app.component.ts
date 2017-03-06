@@ -8,6 +8,4 @@ import { Component } from '@angular/core';
   selector: 'app',
   templateUrl: './app.component.html',
 })
-export class AppComponent {
-  public title = 'Prototype';
-}
+export class AppComponent {}

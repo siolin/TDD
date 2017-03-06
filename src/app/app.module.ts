@@ -19,7 +19,7 @@ import {
 } from '@angular/router';
 import { SignaturePadModule } from 'angular2-signaturepad';
 // import { SelectModule } from 'ng2-select';
-import {SelectModule} from 'angular2-select';
+import { SelectModule } from 'angular2-select';
 
 /*
  * Platform and Environment providers/directives/pipes

@@ -52,7 +52,7 @@ export class RegistrationFormComponent implements OnInit {
     private fb: FormBuilder
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.metadata.fields.forEach((el) => {
       let validators = [];
       if (el.validators.required) {

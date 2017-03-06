@@ -10,13 +10,13 @@ import { NavigationItemComponent } from './navigation/navigation-item/navigation
 import { LoginFormComponent } from './login-form/login-form.component';
 
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
-import { RecruiteeContactFormComponent } from './recruitee-contact-form/recruitee-contact-form.component';
+import { RecruiteeContactFormComponent }
+  from './recruitee-contact-form/recruitee-contact-form.component';
 import { CompanyContactFormComponent } from './company-contact-form/company-contact-form.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FieldFormComponent } from './field-form/field-form.component';
 
 import { PageComponent } from './page/page.component';
-
 
 export const components = [
   FieldFormComponent,
