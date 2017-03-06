@@ -241,6 +241,10 @@ amdefine@>=0.0.4, amdefine@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angular2-select@^1.0.0-beta.3:
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/angular2-select/-/angular2-select-1.0.0-beta.3.tgz#9010e9683f2563a493acca1cd11658bbe0c28b98"
+
 angular2-signaturepad@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/angular2-signaturepad/-/angular2-signaturepad-2.2.0.tgz#f819e20a277870fe5203e7472fe56b3d9460a6ea"
@@ -3460,6 +3464,10 @@ ng-router-loader@^2.1.0:
   dependencies:
     loader-utils "^0.2.16"
     recast "^0.11.20"
+
+ng2-select@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ng2-select/-/ng2-select-1.2.0.tgz#5c90618bffbe32acc5ee1c128c88547059b4f11c"
 
 ngc-webpack@1.1.0:
   version "1.1.0"
