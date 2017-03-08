@@ -13,35 +13,31 @@ describe('Article component', () => {
   let fixture: ComponentFixture<ArticleComponent>;
   let de: DebugElement;
   let el: HTMLElement;
+  let content: string;
 
   beforeEach(() => {
 
     // Create content for ArticleComponent
-    const content: string = '<h1>Content</h1>';
+    content = `
+      <h1 class="title">Content</h1>
+      <p>Description</p>
+    `;
 
     // @NgModule create
     TestBed.configureTestingModule({
-      declarations: [ ArticleComponent ], // declare the test component
+      declarations: [ArticleComponent],
       providers: [
-        { provide: 'contents', useValue: content }
-      ]
+        { provide: 'contents', useValue: content },
+        { provide: ComponentFixtureAutoDetect, useValue: true }
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     });
 
     // create component
     fixture = TestBed.createComponent(ArticleComponent);
 
-    comp = fixture.componentInstance; // headerComponent test instance
+    comp = fixture.componentInstance;
 
-    // authService actually injected into the component
-    const authService = fixture.debugElement.injector.get('contents');
-
-    // query for the title <a> by CSS element selector
-    de = fixture.debugElement.query(By.css('h1'));
-    el = de.nativeElement;
-  });
-
-  it('should display "Content"', () => {
-    expect(el.textContent).toContain('Content');
   });
 
   it('should have "contents" property', () => {
@@ -50,6 +46,12 @@ describe('Article component', () => {
 
   it('should have "contents" property', () => {
     expect(comp.contents).toEqual(content);
+  });
+
+  it('should display "Content"', () => {
+    de = fixture.debugElement.query(By.css('article'));
+    el = de.nativeElement;
+    expect(el.innerHTML).toContain('Description');
   });
 
 });
