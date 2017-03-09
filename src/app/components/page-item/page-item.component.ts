@@ -17,9 +17,8 @@ import {
 export class PageItemComponent implements OnInit {
 
   public currentComponent = null;
-  public componentAlias: any = {};
 
-  @Input() public data;
+  @Input() public data = null;
   @ViewChild('container', { read: ViewContainerRef }) public container: ViewContainerRef;
 
   constructor(
@@ -32,7 +31,7 @@ export class PageItemComponent implements OnInit {
     }
   }
 
-  public createComponent(data, container, componentAlias, currentComponent) {
+  public createComponent(data, container, currentComponent) {
     const params = ['contents', 'children'];
     const inputProviders = [];
     params.forEach((param) => {
@@ -58,10 +57,10 @@ export class PageItemComponent implements OnInit {
 
     if (this.data instanceof Array) {
       this.data.forEach((el) => {
-        this.createComponent(el, this.container, this.componentAlias, this.currentComponent);
+        this.createComponent(el, this.container, this.currentComponent);
       });
     } else if ( this.data instanceof Object) {
-      this.createComponent(this.data, this.container, this.componentAlias, this.currentComponent);
+      this.createComponent(this.data, this.container, this.currentComponent);
     }
   }
 }
