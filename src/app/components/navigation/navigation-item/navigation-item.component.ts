@@ -8,4 +8,10 @@ export class NavigationItemComponent {
 
   @Input() public data;
 
+  public show: boolean = false;
+
+  public showChildren() {
+    this.show = !this.show;
+  }
+
 }

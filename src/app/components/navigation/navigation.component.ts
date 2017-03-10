@@ -11,6 +11,8 @@ import {
 })
 export class NavigationComponent implements OnInit {
 
+  @Input() public class: boolean = false;
+  @Input() public show: boolean = false;
   @Input() public data;
 
   // public data = this.injector.get('data');

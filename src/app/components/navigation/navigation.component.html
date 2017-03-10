@@ -1,5 +1,3 @@
-<ul class="nav">
-  <div *ngFor="let item of dataLinks">
-    <navigation-item [data]="item"></navigation-item>
-  </div>
+<ul class="navigation-list" [ngClass]="{'navigation-list-inner': class, 'show': show}" >
+  <navigation-item *ngFor="let item of dataLinks" [data]="item"></navigation-item>
 </ul>
