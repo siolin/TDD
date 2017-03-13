@@ -3,3 +3,5 @@
   (onBeginEvent)="drawStart()"
   (onEndEvent)="drawComplete()">
 </signature-pad>
+
+<ng2-webcam [options]="options" [onSuccess]="onSuccess" [onError]="onError"></ng2-webcam>

@@ -20,6 +20,7 @@ import {
 import { SignaturePadModule } from 'angular2-signaturepad';
 // import { SelectModule } from 'ng2-select';
 import { SelectModule } from 'angular2-select';
+import { WebCamComponent } from 'ng2-webcam';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -45,6 +46,7 @@ const APP_PROVIDERS = [
   declarations: [
     AppComponent,
     PageItemComponent,
+    WebCamComponent,
     ...components,
   ],
   imports: [ // import Angular's modules
