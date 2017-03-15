@@ -24,11 +24,13 @@ const OptimizeJsPlugin = require('optimize-js-plugin');
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 8080;
+const API_URL = process.env.API_URL = 'core.endless.pro';
 const METADATA = webpackMerge(commonConfig({
   env: ENV
 }).metadata, {
   host: HOST,
   port: PORT,
+  API_URL: API_URL,
   ENV: ENV,
   HMR: false
 });
@@ -161,6 +163,7 @@ module.exports = function (env) {
           'ENV': JSON.stringify(METADATA.ENV),
           'NODE_ENV': JSON.stringify(METADATA.ENV),
           'HMR': METADATA.HMR,
+          'API_URL': JSON.stringify(METADATA.API_URL),
         }
       }),
 
