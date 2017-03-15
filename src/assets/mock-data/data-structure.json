@@ -6,10 +6,6 @@
 	"meta": "auto, sport, family",
 	"template": "regular_page",
 	"children": [
-    {
-      "class": "NavigationComponent",
-      "id": 12
-    },
 		{
 			"class": "ArticleComponent",
 			"id": 124,
