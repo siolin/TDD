@@ -31,7 +31,7 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 
-import '../styles/styles.scss';
+// import '../styles/styles.scss';
 
 // Application wide providers
 const APP_PROVIDERS = [

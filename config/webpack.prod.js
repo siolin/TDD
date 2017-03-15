@@ -116,6 +116,11 @@ module.exports = function (env) {
           include: [helpers.root('src', 'styles')]
         },
 
+        {
+          test: /\.swf$/,
+          loader: "file-loader"
+        },
+
       ]
 
     },
