@@ -1,4 +1,13 @@
-import { Component, trigger, state, style, transition, animate } from '@angular/core';
+import {
+  Component,
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+  EventEmitter,
+  Output
+} from '@angular/core';
 
 /*
  * App Component
@@ -29,6 +38,7 @@ export class AppComponent {
       this.state = 'inactive';
     } else if (this.state === 'inactive') {
       this.state = 'active';
+      this.state.toString();
     }
   }
 }

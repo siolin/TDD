@@ -20,7 +20,11 @@ import {
 import { SignaturePadModule } from 'angular2-signaturepad';
 // import { SelectModule } from 'ng2-select';
 import { SelectModule } from 'angular2-select';
-import { WebCamComponent } from 'ng2-webcam';
+// import { WebCamComponent } from 'ng2-webcam';
+import { A2Edatetimepicker } from 'ng2-eonasdan-datetimepicker';
+import 'eonasdan-bootstrap-datetimepicker';
+import { NguiAutoCompleteModule } from '@ngui/auto-complete';
+import { AutocompleteDirective } from './directives/autocomplete.directive';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -46,8 +50,8 @@ const APP_PROVIDERS = [
   declarations: [
     AppComponent,
     PageItemComponent,
-    WebCamComponent,
-    ...components,
+    // WebCamComponent,
+    ...components
   ],
   imports: [ // import Angular's modules
     SelectModule,
@@ -56,7 +60,9 @@ const APP_PROVIDERS = [
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    A2Edatetimepicker,
+    NguiAutoCompleteModule
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

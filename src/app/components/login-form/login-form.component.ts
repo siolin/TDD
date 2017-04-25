@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ElementRef, HostListener } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 interface Metadata {
@@ -23,6 +23,11 @@ interface Validation {
   templateUrl: 'login-form.component.html'
 })
 export class LoginFormComponent implements OnInit {
+
+  public query = '';
+  public countries = [ 'Albania', 'Andorra'];
+  public filteredList = [];
+  public elementRef;
 
   public metadata = {
     component: 'LoginFormComponent',
@@ -54,8 +59,41 @@ export class LoginFormComponent implements OnInit {
   public formConfig = {};
 
   constructor(
-    private fb: FormBuilder
-  ) {}
+    private fb: FormBuilder,
+    private myElement: ElementRef
+  ) {
+    this.elementRef = myElement;
+  }
+
+  public filter() {
+    if (this.query !== '') {
+        this.filteredList = this.countries.filter((el) => {
+            return el.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
+        });
+    } else {
+        this.filteredList = [];
+    }
+  }
+
+  public select(item) {
+      this.query = item;
+      this.filteredList = [];
+  }
+
+  @HostListener('document:click', ['$event'])
+  public handleClick(event) {
+    let clickedComponent = event.target;
+    let inside = false;
+    do {
+        if (clickedComponent === this.elementRef.nativeElement) {
+            inside = true;
+        }
+        clickedComponent = clickedComponent.parentNode;
+    } while (clickedComponent);
+    if (!inside) {
+        this.filteredList = [];
+    }
+  }
 
   public ngOnInit() {
     this.metadata.fields.forEach((el) => {
